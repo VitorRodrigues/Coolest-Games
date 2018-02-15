@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1393E5C87E297A82089B64EF /* Pods_coolergames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E328CC46F2F46C5B697404 /* Pods_coolergames.framework */; };
+		914FA83020355A60000B180D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914FA82F20355A60000B180D /* UIViewController+Extensions.swift */; };
+		914FA83120355DEB000B180D /* TopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CBF2035578A001B5A29 /* TopListViewController.swift */; };
+		91A60C672035161F001B5A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C662035161F001B5A29 /* AppDelegate.swift */; };
+		91A60C6A2035161F001B5A29 /* coolergames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C682035161F001B5A29 /* coolergames.xcdatamodeld */; };
+		91A60C712035161F001B5A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A60C6F2035161F001B5A29 /* Main.storyboard */; };
+		91A60C732035161F001B5A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A60C722035161F001B5A29 /* Assets.xcassets */; };
+		91A60C762035161F001B5A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A60C742035161F001B5A29 /* LaunchScreen.storyboard */; };
+		91A60C812035161F001B5A29 /* coolergamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C802035161F001B5A29 /* coolergamesTests.swift */; };
+		91A60C8E20352205001B5A29 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C8D20352205001B5A29 /* Game.swift */; };
+		91A60C9020352935001B5A29 /* TopGamesRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C8F20352935001B5A29 /* TopGamesRequester.swift */; };
+		91A60C922035294E001B5A29 /* BaseRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C912035294E001B5A29 /* BaseRequester.swift */; };
+		91A60C9520352BC6001B5A29 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C9420352BC6001B5A29 /* APIError.swift */; };
+		91A60CA12035384C001B5A29 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C9F2035384C001B5A29 /* MasterViewController.swift */; };
+		91A60CA22035384C001B5A29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CA02035384C001B5A29 /* DetailViewController.swift */; };
+		91A60CA520353CFF001B5A29 /* GamesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CA420353CFF001B5A29 /* GamesProxy.swift */; };
+		91A60CAD20353EC6001B5A29 /* VRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CA920353EC6001B5A29 /* VRLoadingView.swift */; };
+		91A60CAE20353EC6001B5A29 /* VRLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A60CAA20353EC6001B5A29 /* VRLoadingView.xib */; };
+		91A60CAF20353EC6001B5A29 /* VRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CAB20353EC6001B5A29 /* VRView.swift */; };
+		91A60CB120353FC3001B5A29 /* GamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CB020353FC3001B5A29 /* GamesRepository.swift */; };
+		91A60CB4203543EB001B5A29 /* GamesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CB3203543EB001B5A29 /* GamesDataSource.swift */; };
+		91A60CB6203544C3001B5A29 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CB5203544C3001B5A29 /* GameCollectionViewCell.swift */; };
+		91A60CB820354E20001B5A29 /* CDGame+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CB720354E20001B5A29 /* CDGame+Game.swift */; };
+		91A60CBA203553B1001B5A29 /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CB9203553B1001B5A29 /* GameDetailsViewController.swift */; };
+		91A60CBD20355574001B5A29 /* UIImageView+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CBC20355574001B5A29 /* UIImageView+Game.swift */; };
+		B81148BAA898DE1A374EC050 /* Pods_coolergamesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583B7A42FCC7E01D201D4FEB /* Pods_coolergamesTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91A60C7D2035161F001B5A29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91A60C5B2035161E001B5A29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91A60C622035161E001B5A29;
+			remoteInfo = coolergames;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		54C4262E65CD823D1A4D027F /* Pods-coolergames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coolergames.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coolergames/Pods-coolergames.debug.xcconfig"; sourceTree = "<group>"; };
+		583B7A42FCC7E01D201D4FEB /* Pods_coolergamesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coolergamesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86764C7DFACF926CD346A03B /* Pods-coolergamesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coolergamesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coolergamesTests/Pods-coolergamesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		914FA82F20355A60000B180D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		91A60C632035161F001B5A29 /* coolergames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coolergames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A60C662035161F001B5A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91A60C692035161F001B5A29 /* coolergames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coolergames.xcdatamodel; sourceTree = "<group>"; };
+		91A60C702035161F001B5A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91A60C722035161F001B5A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91A60C752035161F001B5A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91A60C772035161F001B5A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A60C7C2035161F001B5A29 /* coolergamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coolergamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A60C802035161F001B5A29 /* coolergamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coolergamesTests.swift; sourceTree = "<group>"; };
+		91A60C822035161F001B5A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A60C8D20352205001B5A29 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		91A60C8F20352935001B5A29 /* TopGamesRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGamesRequester.swift; sourceTree = "<group>"; };
+		91A60C912035294E001B5A29 /* BaseRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequester.swift; sourceTree = "<group>"; };
+		91A60C9420352BC6001B5A29 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		91A60C9F2035384C001B5A29 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		91A60CA02035384C001B5A29 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		91A60CA420353CFF001B5A29 /* GamesProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesProxy.swift; sourceTree = "<group>"; };
+		91A60CA920353EC6001B5A29 /* VRLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRLoadingView.swift; sourceTree = "<group>"; };
+		91A60CAA20353EC6001B5A29 /* VRLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VRLoadingView.xib; sourceTree = "<group>"; };
+		91A60CAB20353EC6001B5A29 /* VRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRView.swift; sourceTree = "<group>"; };
+		91A60CB020353FC3001B5A29 /* GamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRepository.swift; sourceTree = "<group>"; };
+		91A60CB3203543EB001B5A29 /* GamesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesDataSource.swift; sourceTree = "<group>"; };
+		91A60CB5203544C3001B5A29 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		91A60CB720354E20001B5A29 /* CDGame+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGame+Game.swift"; sourceTree = "<group>"; };
+		91A60CB9203553B1001B5A29 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
+		91A60CBC20355574001B5A29 /* UIImageView+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Game.swift"; sourceTree = "<group>"; };
+		91A60CBF2035578A001B5A29 /* TopListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListViewController.swift; sourceTree = "<group>"; };
+		94E328CC46F2F46C5B697404 /* Pods_coolergames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coolergames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBCDAFFF0A73319CC3266B00 /* Pods-coolergamesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coolergamesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coolergamesTests/Pods-coolergamesTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF9912ED7121221650DE2E64 /* Pods-coolergames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coolergames.release.xcconfig"; path = "Pods/Target Support Files/Pods-coolergames/Pods-coolergames.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91A60C602035161E001B5A29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1393E5C87E297A82089B64EF /* Pods_coolergames.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91A60C792035161F001B5A29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B81148BAA898DE1A374EC050 /* Pods_coolergamesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01FDA1D6AB14788568F866EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54C4262E65CD823D1A4D027F /* Pods-coolergames.debug.xcconfig */,
+				BF9912ED7121221650DE2E64 /* Pods-coolergames.release.xcconfig */,
+				86764C7DFACF926CD346A03B /* Pods-coolergamesTests.debug.xcconfig */,
+				BBCDAFFF0A73319CC3266B00 /* Pods-coolergamesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3AB9064DFD1E25574CD9364C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94E328CC46F2F46C5B697404 /* Pods_coolergames.framework */,
+				583B7A42FCC7E01D201D4FEB /* Pods_coolergamesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91A60C5A2035161E001B5A29 = {
+			isa = PBXGroup;
+			children = (
+				91A60C652035161F001B5A29 /* coolergames */,
+				91A60C7F2035161F001B5A29 /* coolergamesTests */,
+				91A60C642035161F001B5A29 /* Products */,
+				01FDA1D6AB14788568F866EC /* Pods */,
+				3AB9064DFD1E25574CD9364C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		91A60C642035161F001B5A29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91A60C632035161F001B5A29 /* coolergames.app */,
+				91A60C7C2035161F001B5A29 /* coolergamesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91A60C652035161F001B5A29 /* coolergames */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CA320353CD4001B5A29 /* Proxy */,
+				91A60C9C203536AE001B5A29 /* Games Listing */,
+				91A60C962035364E001B5A29 /* CoreData */,
+				91A60C8C203521FA001B5A29 /* Model */,
+				91A60C8B20351E63001B5A29 /* Networking */,
+				91A60CBB20355563001B5A29 /* Extensions */,
+				91A60CA620353E89001B5A29 /* Views */,
+				91A60C662035161F001B5A29 /* AppDelegate.swift */,
+				91A60CA02035384C001B5A29 /* DetailViewController.swift */,
+				91A60C9F2035384C001B5A29 /* MasterViewController.swift */,
+				91A60C6F2035161F001B5A29 /* Main.storyboard */,
+				91A60C722035161F001B5A29 /* Assets.xcassets */,
+				91A60C742035161F001B5A29 /* LaunchScreen.storyboard */,
+				91A60C772035161F001B5A29 /* Info.plist */,
+			);
+			path = coolergames;
+			sourceTree = "<group>";
+		};
+		91A60C7F2035161F001B5A29 /* coolergamesTests */ = {
+			isa = PBXGroup;
+			children = (
+				91A60C802035161F001B5A29 /* coolergamesTests.swift */,
+				91A60C822035161F001B5A29 /* Info.plist */,
+			);
+			path = coolergamesTests;
+			sourceTree = "<group>";
+		};
+		91A60C8B20351E63001B5A29 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				91A60C9320352BBC001B5A29 /* Errors */,
+				91A60C8F20352935001B5A29 /* TopGamesRequester.swift */,
+				91A60C912035294E001B5A29 /* BaseRequester.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		91A60C8C203521FA001B5A29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91A60C8D20352205001B5A29 /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91A60C9320352BBC001B5A29 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				91A60C9420352BC6001B5A29 /* APIError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		91A60C962035364E001B5A29 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				91A60C682035161F001B5A29 /* coolergames.xcdatamodeld */,
+				91A60C972035364E001B5A29 /* Model Extensions */,
+				91A60CB020353FC3001B5A29 /* GamesRepository.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		91A60C972035364E001B5A29 /* Model Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CB720354E20001B5A29 /* CDGame+Game.swift */,
+			);
+			path = "Model Extensions";
+			sourceTree = "<group>";
+		};
+		91A60C9C203536AE001B5A29 /* Games Listing */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CB2203543D7001B5A29 /* DataSource */,
+				91A60CBF2035578A001B5A29 /* TopListViewController.swift */,
+				91A60CB9203553B1001B5A29 /* GameDetailsViewController.swift */,
+			);
+			path = "Games Listing";
+			sourceTree = "<group>";
+		};
+		91A60CA320353CD4001B5A29 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CA420353CFF001B5A29 /* GamesProxy.swift */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		91A60CA620353E89001B5A29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CAB20353EC6001B5A29 /* VRView.swift */,
+				91A60CA720353EC6001B5A29 /* Loading */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91A60CA720353EC6001B5A29 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CA920353EC6001B5A29 /* VRLoadingView.swift */,
+				91A60CAA20353EC6001B5A29 /* VRLoadingView.xib */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		91A60CB2203543D7001B5A29 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CB3203543EB001B5A29 /* GamesDataSource.swift */,
+				91A60CB5203544C3001B5A29 /* GameCollectionViewCell.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		91A60CBB20355563001B5A29 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91A60CBC20355574001B5A29 /* UIImageView+Game.swift */,
+				914FA82F20355A60000B180D /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91A60C622035161E001B5A29 /* coolergames */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91A60C852035161F001B5A29 /* Build configuration list for PBXNativeTarget "coolergames" */;
+			buildPhases = (
+				58CE6CBB96BC824700B48A1B /* [CP] Check Pods Manifest.lock */,
+				91A60C5F2035161E001B5A29 /* Sources */,
+				91A60C602035161E001B5A29 /* Frameworks */,
+				91A60C612035161E001B5A29 /* Resources */,
+				EE0B7B50193043BD3AC2E71D /* [CP] Embed Pods Frameworks */,
+				1F351D289B0A569C78FCB281 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = coolergames;
+			productName = coolergames;
+			productReference = 91A60C632035161F001B5A29 /* coolergames.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91A60C7B2035161F001B5A29 /* coolergamesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91A60C882035161F001B5A29 /* Build configuration list for PBXNativeTarget "coolergamesTests" */;
+			buildPhases = (
+				29516EA0EF12CDD11E642155 /* [CP] Check Pods Manifest.lock */,
+				91A60C782035161F001B5A29 /* Sources */,
+				91A60C792035161F001B5A29 /* Frameworks */,
+				91A60C7A2035161F001B5A29 /* Resources */,
+				B317CA696152315FBDF36A92 /* [CP] Embed Pods Frameworks */,
+				D0D4FB59AA2B6D8B34078CE0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91A60C7E2035161F001B5A29 /* PBXTargetDependency */,
+			);
+			name = coolergamesTests;
+			productName = coolergamesTests;
+			productReference = 91A60C7C2035161F001B5A29 /* coolergamesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91A60C5B2035161E001B5A29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Vitor Rodrigues";
+				TargetAttributes = {
+					91A60C622035161E001B5A29 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					91A60C7B2035161F001B5A29 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 91A60C622035161E001B5A29;
+					};
+				};
+			};
+			buildConfigurationList = 91A60C5E2035161E001B5A29 /* Build configuration list for PBXProject "coolergames" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91A60C5A2035161E001B5A29;
+			productRefGroup = 91A60C642035161F001B5A29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91A60C622035161E001B5A29 /* coolergames */,
+				91A60C7B2035161F001B5A29 /* coolergamesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91A60C612035161E001B5A29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91A60C762035161F001B5A29 /* LaunchScreen.storyboard in Resources */,
+				91A60C732035161F001B5A29 /* Assets.xcassets in Resources */,
+				91A60CAE20353EC6001B5A29 /* VRLoadingView.xib in Resources */,
+				91A60C712035161F001B5A29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91A60C7A2035161F001B5A29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F351D289B0A569C78FCB281 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coolergames/Pods-coolergames-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29516EA0EF12CDD11E642155 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coolergamesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58CE6CBB96BC824700B48A1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coolergames-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B317CA696152315FBDF36A92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coolergamesTests/Pods-coolergamesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0D4FB59AA2B6D8B34078CE0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coolergamesTests/Pods-coolergamesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE0B7B50193043BD3AC2E71D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-coolergames/Pods-coolergames-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coolergames/Pods-coolergames-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91A60C5F2035161E001B5A29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				914FA83120355DEB000B180D /* TopListViewController.swift in Sources */,
+				91A60CBA203553B1001B5A29 /* GameDetailsViewController.swift in Sources */,
+				91A60CA22035384C001B5A29 /* DetailViewController.swift in Sources */,
+				91A60CAF20353EC6001B5A29 /* VRView.swift in Sources */,
+				91A60CB820354E20001B5A29 /* CDGame+Game.swift in Sources */,
+				91A60CB120353FC3001B5A29 /* GamesRepository.swift in Sources */,
+				914FA83020355A60000B180D /* UIViewController+Extensions.swift in Sources */,
+				91A60CA12035384C001B5A29 /* MasterViewController.swift in Sources */,
+				91A60CA520353CFF001B5A29 /* GamesProxy.swift in Sources */,
+				91A60C672035161F001B5A29 /* AppDelegate.swift in Sources */,
+				91A60C8E20352205001B5A29 /* Game.swift in Sources */,
+				91A60CAD20353EC6001B5A29 /* VRLoadingView.swift in Sources */,
+				91A60C6A2035161F001B5A29 /* coolergames.xcdatamodeld in Sources */,
+				91A60C9020352935001B5A29 /* TopGamesRequester.swift in Sources */,
+				91A60CB6203544C3001B5A29 /* GameCollectionViewCell.swift in Sources */,
+				91A60CBD20355574001B5A29 /* UIImageView+Game.swift in Sources */,
+				91A60C9520352BC6001B5A29 /* APIError.swift in Sources */,
+				91A60CB4203543EB001B5A29 /* GamesDataSource.swift in Sources */,
+				91A60C922035294E001B5A29 /* BaseRequester.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91A60C782035161F001B5A29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91A60C812035161F001B5A29 /* coolergamesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91A60C7E2035161F001B5A29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91A60C622035161E001B5A29 /* coolergames */;
+			targetProxy = 91A60C7D2035161F001B5A29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91A60C6F2035161F001B5A29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A60C702035161F001B5A29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		91A60C742035161F001B5A29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A60C752035161F001B5A29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91A60C832035161F001B5A29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91A60C842035161F001B5A29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91A60C862035161F001B5A29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C4262E65CD823D1A4D027F /* Pods-coolergames.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EL4SH69XY3;
+				INFOPLIST_FILE = coolergames/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.vitorrodrigues.appliances.coolergames;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91A60C872035161F001B5A29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9912ED7121221650DE2E64 /* Pods-coolergames.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EL4SH69XY3;
+				INFOPLIST_FILE = coolergames/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.vitorrodrigues.appliances.coolergames;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91A60C892035161F001B5A29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86764C7DFACF926CD346A03B /* Pods-coolergamesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EL4SH69XY3;
+				INFOPLIST_FILE = coolergamesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.vitorrodrigues.appliances.coolergamesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coolergames.app/coolergames";
+			};
+			name = Debug;
+		};
+		91A60C8A2035161F001B5A29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBCDAFFF0A73319CC3266B00 /* Pods-coolergamesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EL4SH69XY3;
+				INFOPLIST_FILE = coolergamesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.vitorrodrigues.appliances.coolergamesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coolergames.app/coolergames";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91A60C5E2035161E001B5A29 /* Build configuration list for PBXProject "coolergames" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A60C832035161F001B5A29 /* Debug */,
+				91A60C842035161F001B5A29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91A60C852035161F001B5A29 /* Build configuration list for PBXNativeTarget "coolergames" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A60C862035161F001B5A29 /* Debug */,
+				91A60C872035161F001B5A29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91A60C882035161F001B5A29 /* Build configuration list for PBXNativeTarget "coolergamesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A60C892035161F001B5A29 /* Debug */,
+				91A60C8A2035161F001B5A29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91A60C682035161F001B5A29 /* coolergames.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91A60C692035161F001B5A29 /* coolergames.xcdatamodel */,
+			);
+			currentVersion = 91A60C692035161F001B5A29 /* coolergames.xcdatamodel */;
+			path = coolergames.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 91A60C5B2035161E001B5A29 /* Project object */;
+}
