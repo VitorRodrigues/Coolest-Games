@@ -13,6 +13,7 @@ class GameDetailsViewController: UIViewController {
     @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var boxImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView?
+    @IBOutlet weak var popularityLabel: UILabel!
     
     var game: Game? {
         didSet {
@@ -22,7 +23,6 @@ class GameDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureView()
     }
 
@@ -33,6 +33,7 @@ class GameDetailsViewController: UIViewController {
                     self?.setBackgroundImage(image)
                 }
                 gameTitleLabel.text = game.name
+                popularityLabel.text = "Popularity: \(game.popularity)"
             }
         }
     }

@@ -45,6 +45,7 @@ class GamesProxy: NSObject {
                     completion([], false, error)
                 case .success(let newGames):
                     self.allGames.append(contentsOf: newGames)
+                    self.store(games: newGames)
                     completion(newGames, false, nil)
                 }
             })

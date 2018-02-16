@@ -10,6 +10,7 @@
 		1393E5C87E297A82089B64EF /* Pods_coolergames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E328CC46F2F46C5B697404 /* Pods_coolergames.framework */; };
 		914FA83020355A60000B180D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914FA82F20355A60000B180D /* UIViewController+Extensions.swift */; };
 		914FA83120355DEB000B180D /* TopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60CBF2035578A001B5A29 /* TopListViewController.swift */; };
+		916B55FB203669ED0061902C /* DynamicColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B55FA203669ED0061902C /* DynamicColumnLayout.swift */; };
 		91A60C672035161F001B5A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C662035161F001B5A29 /* AppDelegate.swift */; };
 		91A60C6A2035161F001B5A29 /* coolergames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A60C682035161F001B5A29 /* coolergames.xcdatamodeld */; };
 		91A60C712035161F001B5A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A60C6F2035161F001B5A29 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		583B7A42FCC7E01D201D4FEB /* Pods_coolergamesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coolergamesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86764C7DFACF926CD346A03B /* Pods-coolergamesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coolergamesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coolergamesTests/Pods-coolergamesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		914FA82F20355A60000B180D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		916B55FA203669ED0061902C /* DynamicColumnLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicColumnLayout.swift; sourceTree = "<group>"; };
 		91A60C632035161F001B5A29 /* coolergames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coolergames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A60C662035161F001B5A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91A60C692035161F001B5A29 /* coolergames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coolergames.xcdatamodel; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 				583B7A42FCC7E01D201D4FEB /* Pods_coolergamesTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		916B55F92036690D0061902C /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				916B55FA203669ED0061902C /* DynamicColumnLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		91A60C5A2035161E001B5A29 = {
@@ -255,6 +265,7 @@
 		91A60CB2203543D7001B5A29 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				916B55F92036690D0061902C /* Layout */,
 				91A60CB3203543EB001B5A29 /* GamesDataSource.swift */,
 				91A60CB5203544C3001B5A29 /* GameCollectionViewCell.swift */,
 			);
@@ -503,6 +514,7 @@
 				91A60CB6203544C3001B5A29 /* GameCollectionViewCell.swift in Sources */,
 				91A60CBD20355574001B5A29 /* UIImageView+Game.swift in Sources */,
 				91A60C9520352BC6001B5A29 /* APIError.swift in Sources */,
+				916B55FB203669ED0061902C /* DynamicColumnLayout.swift in Sources */,
 				91A60CB4203543EB001B5A29 /* GamesDataSource.swift in Sources */,
 				91A60C922035294E001B5A29 /* BaseRequester.swift in Sources */,
 			);

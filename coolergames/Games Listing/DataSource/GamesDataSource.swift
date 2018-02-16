@@ -14,7 +14,7 @@ protocol GameDataSourceDelegate {
     func dataSourceDidEndFetching(_ ds: GamesDataSource)
 }
 
-class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     weak var collectionView: UICollectionView?
     var delegate: GameDataSourceDelegate?
@@ -22,10 +22,13 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     let proxy: GamesProxy!
     var loadedGames: [Game] = [] {
         didSet {
+            setupFlowLayout()
             collectionView?.reloadData()
         }
     }
-    var cellSize: CGSize = CGSize(width: 166, height: 206)
+    var columnLayout: DynamicColumnLayout? {
+        return collectionView?.collectionViewLayout as? DynamicColumnLayout
+    }
     var page = 1
     private let pageSize = 50
     init(collectionView: UICollectionView, proxy: GamesProxy = GamesProxy()) {
@@ -34,6 +37,20 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
         super.init()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.contentInset = UIEdgeInsetsMake(8, 8, 8, 8)
+    }
+    
+    private func setupFlowLayout() {
+        
+        if UI_USER_INTERFACE_IDIOM() == .pad {
+            if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+                columnLayout?.columns = 3
+            } else {
+                columnLayout?.columns = 4
+            }
+        } else {
+            columnLayout?.columns = 2
+        }
     }
     
     func reset() {
@@ -65,12 +82,8 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameCollectionViewCell
         let game = loadedGames[indexPath.row]
-        cell.configure(game)
+        cell.configure(game, index: indexPath.row+1)
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return cellSize
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
