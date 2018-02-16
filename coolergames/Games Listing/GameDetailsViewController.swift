@@ -12,6 +12,7 @@ class GameDetailsViewController: UIViewController {
     
     @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var boxImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView?
     
     var game: Game? {
         didSet {
@@ -28,9 +29,22 @@ class GameDetailsViewController: UIViewController {
     private func configureView() {
         if let game = game {
             if isViewLoaded {
-                boxImageView.setImage(for: game)
+                boxImageView.setImage(for: game) { [weak self] image in
+                    self?.setBackgroundImage(image)
+                }
                 gameTitleLabel.text = game.name
             }
         }
+    }
+    
+    private func setBackgroundImage(_ image: UIImage?) {
+        guard let backgroundImageView = backgroundImageView else { return }
+        UIView.transition(with: backgroundImageView,
+                          duration: 0.3,
+                          options: .curveEaseOut,
+                          animations: {
+                            backgroundImageView.image = image
+        }, completion: nil)
+        
     }
 }

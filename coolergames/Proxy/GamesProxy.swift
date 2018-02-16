@@ -51,5 +51,12 @@ class GamesProxy: NSObject {
         }
     }
     
-    
+    private func store(games: [Game]) {
+        let saved = repository.storeAll(games, in: repository.backgroundContext)
+        if saved {
+            print("All data stored")
+        } else {
+            print("Couldn't store those games in coredata")
+        }
+    }
 }

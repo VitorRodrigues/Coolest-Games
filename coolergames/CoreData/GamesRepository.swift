@@ -50,11 +50,13 @@ class GamesRepository: NSObject {
         return context
     }
     
-    func saveContext(_ context: NSManagedObjectContext) {
+    @discardableResult
+    func saveContext(_ context: NSManagedObjectContext) -> Bool {
         if context.hasChanges {
             do {
                 try context.save()
                 print("Context saved for Database")
+                return true
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -62,6 +64,7 @@ class GamesRepository: NSObject {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+        return false
     }
     
     func reset() {
@@ -74,11 +77,26 @@ class GamesRepository: NSObject {
     }
     
     // MARK: - Gaming related methods
+    func storeAll(_ games: [Game], in context: NSManagedObjectContext) -> Bool {
+        for game in games {
+            let cdGame = gameEntity(with: game.identifier)
+            cdGame.update(game)
+        }
+        return saveContext(context)
+    }
+    
     func store(_ game: Game, in context: NSManagedObjectContext) -> CDGame {
-        let cdGame = loadGame(with: game.identifier) ?? NSEntityDescription.insertNewObject(forEntityName: "CDGame", into: context) as! CDGame
+        let cdGame = gameEntity(with: game.identifier)
         cdGame.update(game)
         saveContext(context)
         return cdGame
+    }
+    
+    /**
+     Loads from Database or includes in it a new instance of `CDGame` objec
+     */
+    func gameEntity(with identifier: Int) -> CDGame {
+        return loadGame(with: identifier) ?? NSEntityDescription.insertNewObject(forEntityName: "CDGame", into: context) as! CDGame
     }
     
     func loadGame(with identifier: Int) -> CDGame? {

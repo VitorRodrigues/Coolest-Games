@@ -16,6 +16,10 @@ class Game: NSObject {
     let boxImageUrlTemplate: String!
     var popularity: Int!
     
+    override var debugDescription: String {
+        return "\(identifier): \(name) (\(popularity))"
+    }
+    
     // MARK: - Initializers
     init(with json: JSON) {
         identifier = json["_id"].intValue

@@ -123,8 +123,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F2Y-vr-MIj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXb-wp-O6l">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nxp-k4-Q2h">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mBX-by-e6f">
-                                <rect key="frame" x="88" y="88" width="200" height="336.5"/>
+                                <rect key="frame" x="87.5" y="88" width="200" height="336.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-Ay-5cB">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
@@ -147,14 +158,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pXb-wp-O6l" firstAttribute="bottom" secondItem="F2Y-vr-MIj" secondAttribute="bottom" id="Jms-Pz-RZU"/>
+                            <constraint firstItem="3BZ-LR-LL2" firstAttribute="trailing" secondItem="F2Y-vr-MIj" secondAttribute="trailing" id="MIf-M9-UOu"/>
+                            <constraint firstItem="pXb-wp-O6l" firstAttribute="trailing" secondItem="F2Y-vr-MIj" secondAttribute="trailing" id="PkD-3f-Gsd"/>
+                            <constraint firstAttribute="bottom" secondItem="F2Y-vr-MIj" secondAttribute="bottom" id="Pu0-zz-0jj"/>
+                            <constraint firstItem="pXb-wp-O6l" firstAttribute="top" secondItem="F2Y-vr-MIj" secondAttribute="top" id="b7m-SL-x5x"/>
                             <constraint firstItem="mBX-by-e6f" firstAttribute="top" secondItem="3BZ-LR-LL2" secondAttribute="top" constant="24" id="coU-mD-ZXz"/>
+                            <constraint firstItem="F2Y-vr-MIj" firstAttribute="top" secondItem="6Ao-IM-8g4" secondAttribute="top" id="dV7-eN-NrJ"/>
                             <constraint firstItem="mBX-by-e6f" firstAttribute="centerX" secondItem="6Ao-IM-8g4" secondAttribute="centerX" id="flC-eM-puV"/>
                             <constraint firstItem="mBX-by-e6f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3BZ-LR-LL2" secondAttribute="leading" priority="999" constant="16" id="oKt-um-RCc"/>
+                            <constraint firstItem="pXb-wp-O6l" firstAttribute="leading" secondItem="F2Y-vr-MIj" secondAttribute="leading" id="qlj-hx-ZWx"/>
                             <constraint firstItem="3BZ-LR-LL2" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mBX-by-e6f" secondAttribute="bottom" constant="80" id="vHa-uL-D2t"/>
+                            <constraint firstItem="F2Y-vr-MIj" firstAttribute="leading" secondItem="3BZ-LR-LL2" secondAttribute="leading" id="xrU-DS-HI7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3BZ-LR-LL2"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="F2Y-vr-MIj" id="GoF-Pu-75Y"/>
                         <outlet property="boxImageView" destination="bhU-Ay-5cB" id="RSf-KG-3HS"/>
                         <outlet property="gameTitleLabel" destination="Du6-dH-NNo" id="IgW-PI-Mb1"/>
                     </connections>

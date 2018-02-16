@@ -14,14 +14,12 @@ class TopListViewController: UIViewController {
     
     var dataSource:GamesDataSource!
     let proxy = GamesProxy()
-    
-    var loadingView: VRLoadingView {
-        return VRLoadingView()
-    }
+    var loadingView: VRLoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = GamesDataSource(collectionView: collectionView, proxy: proxy)
+        loadingView = VRLoadingView.fromXib()
         loadingView.show(in: view)
         collectionView.dataSource = dataSource
         let refresh = UIRefreshControl()
@@ -36,7 +34,7 @@ class TopListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
             let vc = segue.destination as! GameDetailsViewController
-            vc.game = sender as! Game
+            vc.game = sender as? Game
         }
     }
     
