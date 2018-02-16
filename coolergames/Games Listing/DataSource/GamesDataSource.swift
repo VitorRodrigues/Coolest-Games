@@ -55,7 +55,10 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
         loadedGames.append(contentsOf: proxy.allGames)
     }
     
-    private func setupFlowLayout() {
+    /**
+     Forces the DataSource to calculate the size of its items
+     */
+    func setupFlowLayout() {
         if UI_USER_INTERFACE_IDIOM() == .pad {
             if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
                 columnLayout?.columns = 3
@@ -120,6 +123,7 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard isNextPageAvailable else { return }
         let contentHeight = scrollView.contentSize.height
         // Ensure the content did load before checking for next page
         guard contentHeight > 0 else { return }

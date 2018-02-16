@@ -21,7 +21,6 @@ class GamesProxy: NSObject {
     }
     
     func reset() {
-        repository.reset()
         allGames = []
         lastFetchOffset = -1
     }
@@ -45,6 +44,10 @@ class GamesProxy: NSObject {
                 completion([], false, error)
             case .success(let newGames):
                 self.allGames.append(contentsOf: newGames)
+                if offset == 0 {
+                    // First page, so we clean and create a new repository data
+                    self.repository.reset()
+                }
                 self.store(games: newGames)
                 completion(newGames, false, nil)
             }

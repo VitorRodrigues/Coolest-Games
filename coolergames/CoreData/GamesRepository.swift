@@ -79,14 +79,14 @@ class GamesRepository: NSObject {
     // MARK: - Gaming related methods
     func storeAll(_ games: [Game], in context: NSManagedObjectContext) -> Bool {
         for game in games {
-            let cdGame = gameEntity(with: game.identifier)
+            let cdGame = gameEntity(with: game.identifier, in: context)
             cdGame.update(game)
         }
         return saveContext(context)
     }
     
     func store(_ game: Game, in context: NSManagedObjectContext) -> CDGame {
-        let cdGame = gameEntity(with: game.identifier)
+        let cdGame = gameEntity(with: game.identifier, in: context)
         cdGame.update(game)
         saveContext(context)
         return cdGame
@@ -95,11 +95,11 @@ class GamesRepository: NSObject {
     /**
      Loads from Database or includes in it a new instance of `CDGame` objec
      */
-    func gameEntity(with identifier: Int) -> CDGame {
-        return loadGame(with: identifier) ?? NSEntityDescription.insertNewObject(forEntityName: "CDGame", into: context) as! CDGame
+    func gameEntity(with identifier: Int, in context: NSManagedObjectContext) -> CDGame {
+        return loadGame(with: identifier, in: context) ?? NSEntityDescription.insertNewObject(forEntityName: "CDGame", into: context) as! CDGame
     }
     
-    func loadGame(with identifier: Int) -> CDGame? {
+    func loadGame(with identifier: Int, in context: NSManagedObjectContext) -> CDGame? {
         let request: NSFetchRequest<CDGame> = CDGame.fetchRequest()
         
         let predicate = NSPredicate(format: "identifier == %d", identifier)
@@ -140,7 +140,7 @@ class GamesRepository: NSObject {
     func loadAllStoredGames(context: NSManagedObjectContext) -> [CDGame]? {
         let request: NSFetchRequest<CDGame> = CDGame.fetchRequest()
         
-        let sortByPopularity = NSSortDescriptor(key: "popularity", ascending: true)
+        let sortByPopularity = NSSortDescriptor(key: "popularity", ascending: false)
         request.sortDescriptors = [sortByPopularity]
         
         do {

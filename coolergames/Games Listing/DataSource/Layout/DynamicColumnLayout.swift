@@ -26,6 +26,7 @@ class DynamicColumnLayout: UICollectionViewFlowLayout {
     }
     
     private func initVars() {
+        itemSize = CGSize(width: 80, height: 140)
         minimumLineSpacing = 8
         minimumInteritemSpacing = 8
         scrollDirection = .vertical

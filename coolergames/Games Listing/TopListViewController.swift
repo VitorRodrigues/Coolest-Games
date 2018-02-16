@@ -12,12 +12,13 @@ class TopListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var dataSource:GamesDataSource!
+    var dataSource: GamesDataSource!
     let proxy = GamesProxy()
     var loadingView: VRLoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.frame = view.bounds
         dataSource = GamesDataSource(collectionView: collectionView, proxy: proxy)
         loadingView = VRLoadingView.fromXib()
         loadingView.show(in: view)
@@ -31,7 +32,8 @@ class TopListViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        // Setup the layout again for the collection view so it can arrange the data correctly
+        dataSource.setupFlowLayout()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,6 +69,8 @@ extension TopListViewController: GameDataSourceDelegate {
     }
     
     func dataSource(_ ds: GamesDataSource, didFailToDownload error: Error) {
+        loadingView.hide()
+        collectionView.refreshControl?.endRefreshing()
         checkForError(error)
     }
 }
