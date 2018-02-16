@@ -11,10 +11,10 @@ import Alamofire
 
 class TopGamesRequester: BaseRequester {
 
-    func getTop(_ amount: Int = 30, offset: Int = 0, completion: @escaping (Result<[Game]>)->Void) -> Request {
+    func getTop(limit: Int = 30, offset: Int = 0, completion: @escaping (Result<[Game]>)->Void) -> Request {
         let path = "/top"
         
-        let params = ["limit": amount,
+        let params = ["limit": limit,
                       "offset": offset]
         
         return performRequest(path: path,

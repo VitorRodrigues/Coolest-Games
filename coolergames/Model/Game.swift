@@ -17,7 +17,7 @@ class Game: NSObject {
     var popularity: Int!
     
     override var debugDescription: String {
-        return "\(identifier): \(name) (\(popularity))"
+        return "\(identifier!): \(name!) (\(popularity!))"
     }
     
     // MARK: - Initializers

@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-249" y="-618"/>
         </scene>
-        <!--Top List View Controller-->
+        <!--Top Most Loved Games-->
         <scene sceneID="fBb-QK-WQL">
             <objects>
                 <viewController id="b2G-e0-myd" customClass="TopListViewController" customModule="coolergames" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j7Q-xE-h2S"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AL2-zS-QKU"/>
+                    <navigationItem key="navigationItem" title="Top Most Loved Games" id="AL2-zS-QKU"/>
                     <connections>
                         <outlet property="collectionView" destination="bEz-qO-nbb" id="f2N-GI-Xn9"/>
                         <segue destination="iV5-rY-IPB" kind="show" identifier="detail" id="baw-XF-CdS"/>

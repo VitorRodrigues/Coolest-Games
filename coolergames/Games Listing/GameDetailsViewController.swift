@@ -28,12 +28,13 @@ class GameDetailsViewController: UIViewController {
 
     private func configureView() {
         if let game = game {
+            self.title = game.name
             if isViewLoaded {
                 boxImageView.setImage(for: game) { [weak self] image in
                     self?.setBackgroundImage(image)
                 }
                 gameTitleLabel.text = game.name
-                popularityLabel.text = "Popularity: \(game.popularity)"
+                popularityLabel.text = "Popularity: \(game.popularity!)"
             }
         }
     }

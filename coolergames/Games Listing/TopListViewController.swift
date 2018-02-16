@@ -26,9 +26,7 @@ class TopListViewController: UIViewController {
         refresh.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
         dataSource.delegate = self
         collectionView.refreshControl = refresh
-        dataSource.loadPage() {
-            self.checkForError($0)
-        }
+        dataSource.loadPage()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,9 +44,7 @@ class TopListViewController: UIViewController {
     @objc func didPullToRefresh(_ sender: UIRefreshControl) {
         sender.endRefreshing()
         dataSource.reset()
-        dataSource.loadPage() {
-            self.checkForError($0)
-        }
+        dataSource.loadPage()
     }
     
     func checkForError(_ error: Error?) {
@@ -68,6 +64,10 @@ extension TopListViewController: GameDataSourceDelegate {
     
     func dataSource(_ ds: GamesDataSource, didSelect game: Game) {
         self.performSegue(withIdentifier: "detail", sender: game)
+    }
+    
+    func dataSource(_ ds: GamesDataSource, didFailToDownload error: Error) {
+        checkForError(error)
     }
 }
 

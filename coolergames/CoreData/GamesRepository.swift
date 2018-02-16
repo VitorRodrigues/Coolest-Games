@@ -120,7 +120,7 @@ class GamesRepository: NSObject {
     func loadStoredGames(limit: Int, offset: Int) -> [CDGame]? {
         let request: NSFetchRequest<CDGame> = CDGame.fetchRequest()
         
-        let sortByPopularity = NSSortDescriptor(key: "popularity", ascending: true)
+        let sortByPopularity = NSSortDescriptor(key: "popularity", ascending: false)
         request.sortDescriptors = [sortByPopularity]
         request.fetchLimit = limit
         request.fetchOffset = offset

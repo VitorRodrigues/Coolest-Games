@@ -12,12 +12,25 @@ protocol GameDataSourceDelegate {
     func dataSource(_ ds: GamesDataSource, didSelect game: Game)
     func dataSourceDidBeginFetching(_ ds: GamesDataSource)
     func dataSourceDidEndFetching(_ ds: GamesDataSource)
+    func dataSource(_ ds: GamesDataSource, didFailToDownload error: Error)
 }
 
 class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     weak var collectionView: UICollectionView?
     var delegate: GameDataSourceDelegate?
+    var isNextPageAvailable: Bool = true
+    var requesting: Bool = false {
+        didSet {
+            if requesting {
+                delegate?.dataSourceDidBeginFetching(self)
+            } else {
+                delegate?.dataSourceDidEndFetching(self)
+            }
+        }
+    }
+    var page = 1
+    private let pageSize = 50
     
     let proxy: GamesProxy!
     var loadedGames: [Game] = [] {
@@ -26,11 +39,11 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
             collectionView?.reloadData()
         }
     }
+    
     var columnLayout: DynamicColumnLayout? {
         return collectionView?.collectionViewLayout as? DynamicColumnLayout
     }
-    var page = 1
-    private let pageSize = 50
+    
     init(collectionView: UICollectionView, proxy: GamesProxy = GamesProxy()) {
         self.collectionView = collectionView
         self.proxy = proxy
@@ -38,10 +51,11 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.contentInset = UIEdgeInsetsMake(8, 8, 8, 8)
+        // Show all games that are stored in our DB
+        loadedGames.append(contentsOf: proxy.allGames)
     }
     
     private func setupFlowLayout() {
-        
         if UI_USER_INTERFACE_IDIOM() == .pad {
             if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
                 columnLayout?.columns = 3
@@ -54,20 +68,34 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func reset() {
+        isNextPageAvailable = true
         page = 1
         proxy.reset()
         loadPage()
     }
     
-    func loadPage(completion: ((Error?)->Void)? = nil) {
+    func loadPage() {
+        guard !requesting else { return }
         let pageIndex = page-1
-        delegate?.dataSourceDidBeginFetching(self)
-        proxy.loadGames(limit: pageSize, offset: pageIndex * pageSize) { [weak self] (games, saved, error)  in
-            self?.loadedGames.append(contentsOf: games)
-            if let safeSelf = self {
-                safeSelf.delegate?.dataSourceDidEndFetching(safeSelf)
+        let pageSize = self.pageSize
+        let offset = pageIndex * pageSize
+        requesting = true
+        proxy.loadGames(limit: pageSize, offset: offset) { (games, saved, error)  in
+            if !games.isEmpty {
+                self.isNextPageAvailable = pageSize == games.count
+                if self.page == 1 {
+                    self.loadedGames = games
+                } else {
+                    // Increment after page 2
+                    self.loadedGames.append(contentsOf: games)
+                }
+            } else {
+                self.isNextPageAvailable = false
             }
-            completion?(error)
+            self.requesting = false
+            if let error = error {
+                self.delegate?.dataSource(self, didFailToDownload: error)
+            }
         }
     }
     
@@ -89,5 +117,22 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let game = loadedGames[indexPath.row]
         delegate?.dataSource(self, didSelect: game)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentHeight = scrollView.contentSize.height
+        // Ensure the content did load before checking for next page
+        guard contentHeight > 0 else { return }
+        let viewHeight = scrollView.bounds.size.height
+        let offsetY = scrollView.contentOffset.y + viewHeight
+        let bottomLine = contentHeight - viewHeight
+        if bottomLine <= offsetY && !requesting {
+            requestNextPage()
+        }
+    }
+    
+    private func requestNextPage() {
+        page += 1
+        loadPage()
     }
 }
