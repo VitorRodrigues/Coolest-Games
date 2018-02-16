@@ -61,12 +61,16 @@ class GamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     func setupFlowLayout() {
         if UI_USER_INTERFACE_IDIOM() == .pad {
             if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
-                columnLayout?.columns = 3
-            } else {
                 columnLayout?.columns = 4
+            } else {
+                columnLayout?.columns = 3
             }
         } else {
-            columnLayout?.columns = 2
+            if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+                columnLayout?.columns = 3
+            } else {
+                columnLayout?.columns = 2
+            }
         }
     }
     

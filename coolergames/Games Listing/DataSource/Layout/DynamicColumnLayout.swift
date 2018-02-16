@@ -40,6 +40,7 @@ class DynamicColumnLayout: UICollectionViewFlowLayout {
     }
     private func recalculateItemSize() {
         let contentSize = self.collectionViewContentSize
+        guard contentSize.width > 0 else { return }
         let insets = self.collectionView?.contentInset ?? .zero
         let ratio = CGFloat(200.0/120.0)
         let availableWidth = contentSize.width - (insets.left + insets.right)
